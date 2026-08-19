@@ -52,6 +52,7 @@ src/
 │   ├── Others/                    # Folder for shared/other components
 │   │   ├── Header.jsx             # UI for the top navigation or heading section
 │   │   └── TaskListNumbers.jsx    # UI for displaying task statistics/numbers
+│   │   └── CreateTask.jsx         # UI for displaying  Create Task on Admin section
 │   └── Tasklist/
 │       ├── AcceptTask.jsx         # UI for newly assigned tasks
 │       ├── CompleteTask.jsx       # UI for successfully finished tasks
