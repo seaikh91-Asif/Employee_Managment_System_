@@ -42,17 +42,22 @@ The codebase is modularly structured for high maintainability and a clear separa
 
 ```
 src/
+├── assets/                        # New folder for static assets (images, icons, etc.)
 ├── Components/
 │   ├── Auth/
 │   │   └── Login.jsx              # Secure login, routes users by role
 │   ├── Dashboard/
 │   │   ├── AdminDashboard.jsx     # Command center for creating & distributing tasks
 │   │   └── EmployeeDashboard.jsx  # Masonry-style grid of assigned tasks
+│   ├── Others/                    # Folder for shared/other components
+│   │   ├── Header.jsx             # UI for the top navigation or heading section
+│   │   └── TaskListNumbers.jsx    # UI for displaying task statistics/numbers
 │   └── Tasklist/
-│       ├── NewTask.jsx            # Card design for incoming tasks
 │       ├── AcceptTask.jsx         # UI for newly assigned tasks
 │       ├── CompleteTask.jsx       # UI for successfully finished tasks
-│       └── FaildTask.jsx          # UI for tasks marked as failed
+│       ├── FaildTask.jsx          # UI for tasks marked as failed
+│       ├── NewTask.jsx            # Card design for incoming tasks
+│       └── TaskList.jsx           # New main list component rendering the tasks
 ├── Context/
 │   ├── AuthContext.jsx            # Global login state + session persistence
 │   └── TaskContext.jsx            # Global task array, distributed to employee views
