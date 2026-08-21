@@ -10,21 +10,29 @@ const App = () => {
 
   const handleLogin = (email, password) => {
     if (email == 'admin@example.com' && password == '123'){
-      console.log("this is admin")
+      setUser('admin')
+      console.log(user)
     } else if (email == 'employee1@example.com' && password == '123') {
-      console.log("this is employee")
+      setUser('employee1')
+      console.log(user)
     }
      else {
       alert("Invalid Creadentials"); 
     }
   }
-  handleLogin('employee1@example.com', '123')
+  
   
   return (
     <>
-      {!user ? <Login/> : ''}
-      {/* <EmployeeDashboard/> */}
-      {/* <AdminDashboard/> */}
+     {!user ? (
+  <Login handleLogin={handleLogin} />
+) : user === 'admin' ? (
+  <AdminDashboard />
+) : (
+  <EmployeeDashboard />
+)}
+      
+     
     </>
   )
 }
