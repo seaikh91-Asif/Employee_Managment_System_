@@ -51,7 +51,7 @@ const CreateTask = () => {
 
         <div className="bg-white p-8  rounded-4xl shadow-sm border border-gray-100">
           <h2 className="text-2xl font-bold mb-6 text-gray-900">Task Overview</h2>
-          <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
+          <div className="space-y-4 overflow-y-auto pr-2" style={{ maxHeight: '600px' }}>
             
             <div className="flex items-center justify-between p-4 bg-gray-50 rounded-2xl">
               <div>
