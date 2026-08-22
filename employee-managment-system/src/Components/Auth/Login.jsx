@@ -22,10 +22,10 @@ const Login = ({handleLogin}) => {
         }}
         className="flex flex-col gap-4">
           <input 
-           value={email}
-           onChange={(e) => {
+            value={email}
+            onChange={(e) => {
             setEmail(e.target.value)
-           }}
+            }}
             type="email" 
             placeholder="Email address" 
             className="w-full px-5 py-4 bg-gray-100 rounded-2xl border-none focus:ring-2 focus:ring-gray-300 outline-none text-gray-800 placeholder-gray-500"
