@@ -159,8 +159,8 @@ const employees = [
   },
   {
     "id": 5,
-    "email": "employee5@example.com",
-    "password": "123",
+    "email": "rajibkhan71592@gmail.com",
+    "password": "rajib@employee.com",
     "tasks": [
       {
         "active": false,
@@ -224,4 +224,5 @@ export const getLocalStorage = () => {
   const admin = JSON.parse(localStorage.getItem('admin'))
 
  console.log(employees, admin)
+ return { employees, admin }
 }

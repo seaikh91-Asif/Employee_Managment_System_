@@ -8,14 +8,31 @@ import { AuthContext } from './Context/AuthProvider'
 const App = () => {
 
   const [user, setUser] = useState(null)
+  const authData = useContext(AuthContext)
+
+  useEffect(() => {
+    
+    if(authData) {
+      const loggedInUser = localStorage.getItem("loggedInUser")
+      if(loggedInUser) {
+        setUser(loggedInUser.role)
+      }
+    }
+  }, [])
+  
+
+  useEffect(() => {
+    setLocalStorage(); 
+  }, []);
 
   const handleLogin = (email, password) => {
     if (email == 'admin@example.com' && password == '123'){
       setUser('admin')
-      console.log(user)
-    } else if (email == 'employee1@example.com' && password == '123') {
-      setUser('employee1')
-      console.log(user)
+      localStorage.setItem('loggedInUser', JSON.stringify({role:'admin'}))
+      
+    } else if (authData && authData.employees.find((e) => e.email && e.password == password)) {
+      setUser('employee')
+      localStorage.setItem('loggedInUser', JSON.stringify({role:'employee'}))
     }
      else {
       alert("Invalid Creadentials"); 
@@ -23,7 +40,7 @@ const App = () => {
   }
 
   const data = useContext(AuthContext)
-  console.log(data)
+  
   
   
   return (
